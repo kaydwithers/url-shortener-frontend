@@ -58,11 +58,11 @@ getUrls();
           <h4 class="font-medium">Full URL</h4>
         </div>
 
-        <div class="flex-1 text-left">
+        <div class="flex-1 text-center">
           <h4 class="font-medium">Short URL</h4>
         </div>
 
-        <div class="flex-1 text-left">
+        <div class="flex-1 text-center">
           <h4 class="font-medium">Clicks</h4>
         </div>
 
@@ -79,13 +79,13 @@ getUrls();
             </a>
           </div>
 
-          <div class="flex-1 text-left">
+          <div class="flex-1 text-center">
             <a :href="`${BACKEND_URL}/${url.short}`" class="underline">
               {{ url.short }}
             </a>
           </div>
 
-          <div class="flex-1 text-left">
+          <div class="flex-1 text-center">
             <p>{{ url.clicks }}</p>
           </div>
 
