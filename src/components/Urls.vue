@@ -18,7 +18,7 @@ const deleteHandler = async (shortUrl: string) => {
   await getUrls();
 };
 
-const urlSubmitHandler = async (event: Event) => {
+const submitHandler = async (event: Event) => {
   event.preventDefault();
   await addUrl(inputText.value);
   await getUrls();
@@ -37,9 +37,9 @@ getUrls();
       <p>{{ error }}</p>
     </div>
 
-    <div v-else class="">
+    <div v-else>
       <div class="mb-10">
-        <form @submit="urlSubmitHandler">
+        <form @submit="submitHandler">
           <Input
             id="longUrl"
             label="Add a URL"
@@ -49,7 +49,9 @@ getUrls();
             v-model="inputText"
           />
 
-          <Button class="transition hover:scale-90" type="submit">Go</Button>
+          <Button class="transition hover:scale-90" type="submit">
+            Add URL
+          </Button>
         </form>
       </div>
 
