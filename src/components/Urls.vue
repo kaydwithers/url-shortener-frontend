@@ -49,7 +49,7 @@ getUrls();
             v-model="inputText"
           />
 
-          <Button type="submit">Go</Button>
+          <Button class="transition hover:scale-90" type="submit">Go</Button>
         </form>
       </div>
 
@@ -90,7 +90,12 @@ getUrls();
           </div>
 
           <div class="flex-1 text-right">
-            <button @click="deleteHandler(url.short)">🗑️</button>
+            <button
+              class="transition hover:rotate-45"
+              @click="deleteHandler(url.short)"
+            >
+              🗑️
+            </button>
           </div>
         </div>
       </div>
