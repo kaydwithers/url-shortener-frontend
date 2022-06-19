@@ -6,9 +6,9 @@ export const useHttpClient = () => {
 
   const sendRequest = async (
     url: string,
-    method: string = "GET",
+    method = "GET",
     body: string | null = null,
-    headers: {} = {}
+    headers = {}
   ) => {
     isLoading.value = true;
     error.value = null;
