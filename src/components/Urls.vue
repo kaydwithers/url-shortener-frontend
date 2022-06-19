@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 import { REDIRECT_URL } from "@/lib/const";
 import { useHttpClient } from "@/composables/useHttp";
@@ -24,7 +24,9 @@ const submitHandler = async (event: Event) => {
   await getUrls();
 };
 
-getUrls();
+onMounted(async () => {
+  await getUrls();
+});
 </script>
 
 <template>
