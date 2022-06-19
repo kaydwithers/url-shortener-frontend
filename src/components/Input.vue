@@ -9,7 +9,7 @@ defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "update:modelValue", id: string): void;
+  (e: "update:modelValue", value: string | number): void;
 }>();
 
 const inputHandler = (event: Event) => {
