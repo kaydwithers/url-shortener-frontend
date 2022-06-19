@@ -11,7 +11,7 @@ defineProps<{
     :class="[
       kind === 'danger'
         ? 'bg-red-400 hover:bg-red-500'
-        : 'bg-gray-300 hover:bg-gray-400',
+        : 'bg-accent hover:opacity-70',
       disabled ? 'opacity-50' : '',
     ]"
     :disabled="disabled"
