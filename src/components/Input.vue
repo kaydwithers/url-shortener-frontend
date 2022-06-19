@@ -8,7 +8,11 @@ defineProps<{
   required: boolean;
 }>();
 
-defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
+
+const inputHandler = (event: Event) => {
+  emit(("update:modelValue", event.target as HTMLInputElement).value);
+};
 </script>
 
 <template>
@@ -21,7 +25,7 @@ defineEmits(["update:modelValue"]);
       :required="required"
       :type="type"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="inputHandler"
     />
   </div>
 </template>
