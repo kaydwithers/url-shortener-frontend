@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { BACKEND_URL } from "@/lib/const";
+import { REDIRECT_URL } from "@/lib/const";
 import { useHttpClient } from "@/composables/useHttp";
 import { useUrl } from "@/composables/useUrl";
 
@@ -80,10 +80,7 @@ getUrls();
           </div>
 
           <div class="flex-1 text-center">
-            <a
-              :href="`${BACKEND_URL}/shortener/${url.short}`"
-              class="underline"
-            >
+            <a :href="`${REDIRECT_URL}/${url.short}`" class="underline">
               {{ url.short }}
             </a>
           </div>

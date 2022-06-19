@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-import { BACKEND_URL } from "@/lib/const";
+import { API_URL } from "@/lib/const";
 import { useHttpClient } from "@/composables/useHttp";
 
 import type { UrlInterface } from "@/lib/interfaces/urlInterface";
@@ -13,7 +13,7 @@ export const useUrl = () => {
   const addUrl = async (url: string) => {
     try {
       await sendRequest(
-        `${BACKEND_URL}/api/shorturl`,
+        `${API_URL}/shorturl`,
         "POST",
         JSON.stringify({
           longUrl: url,
@@ -29,11 +29,7 @@ export const useUrl = () => {
 
   const deleteUrl = async (shortUrl: string) => {
     try {
-      await sendRequest(
-        `${BACKEND_URL}/api/shorturls/${shortUrl}`,
-        "DELETE",
-        null
-      );
+      await sendRequest(`${API_URL}/shorturls/${shortUrl}`, "DELETE", null);
     } catch (err) {
       console.error(err);
     }
@@ -41,7 +37,7 @@ export const useUrl = () => {
 
   const getUrls = async () => {
     try {
-      const responseData = await sendRequest(`${BACKEND_URL}/api/urls`);
+      const responseData = await sendRequest(`${API_URL}/urls`);
       urls.value = responseData.shortUrls;
     } catch (err) {
       console.error(err);
