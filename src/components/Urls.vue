@@ -53,7 +53,7 @@ getUrls();
         </form>
       </div>
 
-      <div class="mb-2 flex w-full justify-between text-center">
+      <div class="mb-4 flex w-full justify-between text-center">
         <div class="flex-1 text-left">
           <h4 class="font-medium">Full URL</h4>
         </div>
@@ -72,7 +72,11 @@ getUrls();
       </div>
 
       <div class="flex w-full flex-col justify-between text-center">
-        <div v-for="(url, index) in urls" :key="index" class="flex flex-row">
+        <div
+          v-for="(url, index) in urls"
+          :key="index"
+          class="mb-2 flex flex-row"
+        >
           <div class="flex-1 text-left">
             <a :href="url.full" class="underline">
               {{ url.full }}
