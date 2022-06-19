@@ -80,7 +80,10 @@ getUrls();
           </div>
 
           <div class="flex-1 text-center">
-            <a :href="`${BACKEND_URL}/${url.short}`" class="underline">
+            <a
+              :href="`${BACKEND_URL}/shortener/${url.short}`"
+              class="underline"
+            >
               {{ url.short }}
             </a>
           </div>
