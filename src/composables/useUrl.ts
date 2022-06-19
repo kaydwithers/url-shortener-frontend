@@ -3,10 +3,12 @@ import { ref } from "vue";
 import { BACKEND_URL } from "@/lib/const";
 import { useHttpClient } from "@/composables/useHttp";
 
+import type { UrlInterface } from "@/lib/interfaces/urlInterface";
+
 export const useUrl = () => {
   const { sendRequest } = useHttpClient();
 
-  const urls = ref([]);
+  const urls = ref(Array<UrlInterface>());
 
   const addUrl = async (url: string) => {
     try {

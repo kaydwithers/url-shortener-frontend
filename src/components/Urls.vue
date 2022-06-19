@@ -12,7 +12,6 @@ const { error, isLoading } = useHttpClient();
 const { addUrl, deleteUrl, getUrls, urls } = useUrl();
 
 const inputText = ref("");
-// const shortUrls = ref([]);
 
 const deleteHandler = async (shortUrl: string) => {
   await deleteUrl(shortUrl);
