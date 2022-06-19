@@ -9,8 +9,6 @@ export const useUrl = () => {
   const urls = ref([]);
 
   const addUrl = async (url: string) => {
-    console.log("url: ", url);
-
     try {
       await sendRequest(
         `${BACKEND_URL}/api/shorturl`,
@@ -22,14 +20,10 @@ export const useUrl = () => {
           "Content-Type": "application/json",
         }
       );
-    } catch (err) {
-      console.error("addUrl error: ", err);
-    }
+    } catch (err) {}
   };
 
   const deleteUrl = async (shortUrl: string) => {
-    console.log("deleteUrl");
-
     try {
       await sendRequest(
         `${BACKEND_URL}/api/shorturls/${shortUrl}`,
@@ -39,39 +33,16 @@ export const useUrl = () => {
     } catch (err) {}
   };
 
-  const editUrl = async () => {
-    try {
-      await sendRequest(
-        `${BACKEND_URL}/api/urls/${urlId.value}`,
-        "PATCH",
-        JSON.stringify({
-          title: "Tile patch",
-          description: "Description patch",
-        }),
-        {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token, // auth.token
-        }
-      );
-    } catch (err) {}
-  };
-
   const getUrls = async () => {
     try {
       const responseData = await sendRequest(`${BACKEND_URL}/api/urls`);
-
       urls.value = responseData.shortUrls;
-
-      console.log("getUrls responseData", responseData);
-    } catch (err) {
-      console.error("getUrls error: ", err);
-    }
+    } catch (err) {}
   };
 
   return {
     addUrl,
     deleteUrl,
-    editUrl,
     getUrls,
     urls,
   };
