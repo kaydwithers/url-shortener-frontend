@@ -22,26 +22,20 @@ export const useUrl = () => {
           "Content-Type": "application/json",
         }
       );
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err) {}
   };
 
   const deleteUrl = async (shortUrl: string) => {
     try {
       await sendRequest(`${API_URL}/shorturls/${shortUrl}`, "DELETE", null);
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err) {}
   };
 
   const getUrls = async () => {
     try {
       const responseData = await sendRequest(`${API_URL}/urls`);
       urls.value = responseData.shortUrls;
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err) {}
   };
 
   return {
