@@ -5,15 +5,15 @@ import { useHttpClient } from "@/composables/useHttp";
 
 import type { UrlInterface } from "@/lib/interfaces/urlInterface";
 
+export const urls = ref(Array<UrlInterface>());
+
 export const useUrl = () => {
   const { sendRequest } = useHttpClient();
-
-  const urls = ref(Array<UrlInterface>());
 
   const addUrl = async (url: string) => {
     try {
       await sendRequest(
-        `${API_URL}/shorturl`,
+        `${API_URL}/api/shorturl`,
         "POST",
         JSON.stringify({
           longUrl: url,
