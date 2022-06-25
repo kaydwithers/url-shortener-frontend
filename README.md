@@ -1,5 +1,14 @@
 # url-shortener-frontend
 
+A URL shortening code challenge.
+
+Made with Vue 3, Script Setup, TypeScript, Composables, Vite, Tailwind, Node, Express, MongoDB, Vercel.
+
+The Backend can be found below.
+https://github.com/kaydwithers/url-shortener-backend
+
+https://linktr.ee/kaydw
+
 ## Project Setup
 
 ```sh
