@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 
-import { REDIRECT_URL } from "@/lib/const";
+import { API_URL } from "@/lib/const";
 import { useHttpClient } from "@/composables/useHttp";
 import { useUrl } from "@/composables/useUrl";
 
@@ -88,7 +88,7 @@ onMounted(async () => {
           </div>
 
           <div class="flex-1 text-center">
-            <a :href="`${REDIRECT_URL}/${url.short}`" class="underline">
+            <a :href="`${API_URL}/${url.short}`" class="underline">
               {{ url.short }}
             </a>
           </div>

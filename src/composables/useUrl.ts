@@ -27,13 +27,13 @@ export const useUrl = () => {
 
   const deleteUrl = async (shortUrl: string) => {
     try {
-      await sendRequest(`${API_URL}/shorturls/${shortUrl}`, "DELETE", null);
+      await sendRequest(`${API_URL}/api/shorturls/${shortUrl}`, "DELETE", null);
     } catch (err) {}
   };
 
   const getUrls = async () => {
     try {
-      const responseData = await sendRequest(`${API_URL}/urls`);
+      const responseData = await sendRequest(`${API_URL}/api/urls`);
       urls.value = responseData.shortUrls;
     } catch (err) {}
   };
