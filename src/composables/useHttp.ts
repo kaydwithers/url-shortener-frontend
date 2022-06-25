@@ -1,9 +1,20 @@
 import { ref } from "vue";
 
+/** Error state. */
 export const error = ref("");
+
+/** Whether or not any logic is loading. */
 export const isLoading = ref(false);
 
 export const useHttpClient = () => {
+  /**
+   * Sends a fetch request and returns a data object.
+   * @param url
+   * @param method
+   * @param body
+   * @param headers
+   * @returns {object}
+   */
   const sendRequest = async (
     url: string,
     method = "GET",
@@ -27,7 +38,6 @@ export const useHttpClient = () => {
       }
 
       isLoading.value = false;
-
       return responseData;
     } catch (err: any) {
       error.value = err.message;

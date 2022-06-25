@@ -10,6 +10,10 @@ export const urls = ref(Array<UrlInterface>());
 export const useUrl = () => {
   const { sendRequest } = useHttpClient();
 
+  /**
+   * Adds a URL.
+   * @param url - The URL.
+   */
   const addUrl = async (url: string) => {
     try {
       await sendRequest(
@@ -25,12 +29,19 @@ export const useUrl = () => {
     } catch (err) {}
   };
 
+  /**
+   * Deletes a URL.
+   * @param shortUrl
+   */
   const deleteUrl = async (shortUrl: string) => {
     try {
       await sendRequest(`${API_URL}/api/shorturls/${shortUrl}`, "DELETE", null);
     } catch (err) {}
   };
 
+  /**
+   * Populate the URL data.
+   */
   const getUrls = async () => {
     try {
       const responseData = await sendRequest(`${API_URL}/api/urls`);
