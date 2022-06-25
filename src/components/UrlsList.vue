@@ -30,10 +30,10 @@ const deleteHandler = async (shortUrl: string) => {
 
     <table v-else>
       <tr>
-        <th class="text-left">Full URL</th>
-        <th>Short URL</th>
-        <th>Clicks</th>
-        <th>Delete</th>
+        <th class="pb-4 text-left">Full URL</th>
+        <th class="pb-4">Short URL</th>
+        <th class="pb-4">Clicks</th>
+        <th class="pb-4">Delete</th>
       </tr>
       <tr v-for="(item, index) in items" :key="index">
         <td class="text-left">
