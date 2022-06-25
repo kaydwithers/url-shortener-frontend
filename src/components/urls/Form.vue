@@ -3,8 +3,8 @@ import { ref } from "vue";
 
 import { useUrl } from "@/composables/useUrl";
 
-import Button from "@/components/Button.vue";
-import Input from "@/components/Input.vue";
+import Button from "@/components/base/Button.vue";
+import Input from "@/components/base/Input.vue";
 
 const { addUrl, getUrls } = useUrl();
 
