@@ -1,9 +1,9 @@
 import { ref } from "vue";
 
-export const useHttpClient = () => {
-  const error = ref(null);
-  const isLoading = ref(false);
+export const error = ref("");
+export const isLoading = ref(false);
 
+export const useHttpClient = () => {
   const sendRequest = async (
     url: string,
     method = "GET",
@@ -11,7 +11,7 @@ export const useHttpClient = () => {
     headers = {}
   ) => {
     isLoading.value = true;
-    error.value = null;
+    error.value = "";
 
     try {
       const response = await fetch(url, {
